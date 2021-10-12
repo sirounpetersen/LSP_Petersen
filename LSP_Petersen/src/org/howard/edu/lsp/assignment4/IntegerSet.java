@@ -1,5 +1,4 @@
 package org.howard.edu.lsp.assignment4;
-pachage exa;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
@@ -124,11 +123,11 @@ public class IntegerSet  {
  			}
  		}
  		
- 		if (seen = false){
+ 		if (seen == false){
  			integerset.add(item);
  		}
  		
- 	};
+ 	}
 
 	/**
 	 *  Removes an item from the set or does nothing if not there
@@ -146,37 +145,46 @@ public class IntegerSet  {
 	/** Set union
 	 */
 	public void union(IntegerSet intSetb) {
-		List<Integer> temp = intSetb.getlist();
+		List<Integer> lst = intSetb.GetList();
 		List<Integer> unionlist = new ArrayList<Integer>();
 		
 		unionlist.addAll(integerset);
-		unionlist.addAll(temp);
+		unionlist.addAll(lst);
 		
+		System.out.println(unionlist);
 
 	};
 	
 	// Set intersection
 	public void intersect(IntegerSet intSetb) {
-		List<Integer> temp = intSetb.getlist();
-		List<Integer> intersection = new ArrayList<Integer>();
+		List<Integer> lst = intSetb.GetList();
 		
-		integerset.retainAll(temp);
-
-	}; 
+		integerset.retainAll(lst);
+		
+		System.out.println(integerset);
+	}
 	
-	// Set difference, i.e., s1 –s2
+	
+	
+	
+	/**Set difference, i.e., s1 –s2
+	 * 
+	 * 
+	 */
 	public void diff(IntegerSet intSetb) {
 		// set difference, i.e. s1 - s2
 		
-		List<Integer> temp = intSetb.getlist();
-		List<Integer> difference = new ArrayList<Integer>();
+		List<Integer> lst = intSetb.GetList();
 		
-		integerset.removeAll(temp);
+		integerset.removeAll(lst);
 		
+		System.out.println(integerset);
 		
 	}
 	
-	// Returns true if the set is empty, false otherwise
+	/**
+	 *  Returns true if the set is empty, false otherwise
+	 */
 	boolean isEmpty(){
 		if (integerset.size() == 0) {
 			return true;
@@ -186,18 +194,22 @@ public class IntegerSet  {
 		}
 	};
 	
-	// Return String representation of your set
+	/**Return String representation of your set
+	 * 
+	 */
 	public String toString() {
 		
-		for(int i = 0; i<integerset.size(); i++) {
-			String a = integerset.get(i).toString();
-			
-		}
-		return a;
+		return integerset.toString();
 		
 	};	// return String representation of your set
 	
 	
 	class IntegerSetException extends Exception {
 	}
+	
+	
+	public List<Integer> GetList() {
+		return integerset;
+	}
+	
 	}
