@@ -236,7 +236,7 @@ public class IntegerSet  {
 	/**
 	 *  @return true if the set is empty, false otherwise
 	 */
-	boolean isEmpty(){
+	public boolean isEmpty(){
 		if (integerset.size() == 0) {
 			return true;
 		}
